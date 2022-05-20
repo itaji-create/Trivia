@@ -8,7 +8,6 @@ class NextButton extends React.Component {
       <button
         type="button"
         id="next-btn"
-        data-testid="btn-next"
         onClick={ handleClickNext }
       >
         PRÓXIMA

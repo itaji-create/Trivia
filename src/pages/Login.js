@@ -29,10 +29,9 @@ class Login extends React.Component {
 
   handleClick = () => {
     const { userName, email } = this.state;
-    const { setToken, user, history } = this.props;
+    const { setToken, user } = this.props;
     setToken();
     user({ userName, email });
-    history.push('/game');
   }
 
   render() {
@@ -59,14 +58,16 @@ class Login extends React.Component {
               data-testid="input-gravatar-email"
             />
           </label>
-          <button
-            data-testid="btn-play"
-            type="button"
-            disabled={ isDisabled }
-            onClick={ this.handleClick }
-          >
-            Play
-          </button>
+          <Link to="/game">
+            <button
+              data-testid="btn-play"
+              type="button"
+              disabled={ isDisabled }
+              onClick={ this.handleClick }
+            >
+              Play
+            </button>
+          </Link>
           <Link to="/settings">
             <button data-testid="btn-settings" type="button">
               Settings

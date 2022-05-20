@@ -5,9 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* imagem comiada do endereço
-  https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/804010/bcdc8103401c44f035d126340da1cf2ccf0a03bd.jpg */
   background-size: cover;
+}
+
+#allPage {
+  display: flex;
+  flex-direction: column;
 }
 
 body button {
@@ -119,7 +122,7 @@ header #userIMG, table img {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin-left: 35%;
+  align-self: center;
   border: solid rgb(27, 27, 151);
   padding: 10px;
   margin-top: 10px;
