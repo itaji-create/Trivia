@@ -1,28 +1,22 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Players from '../components/Players';
+import Header from '../components/Header';
 
 class Ranking extends Component {
   handleClick = () => {
-    const { history } = this.props;
-    history.push('/');
+    window.location.pathname = '/';
   }
 
   render() {
     const playersInfo = JSON.parse(localStorage.getItem('ranking'));
 
     return (
-      <div id="ranking">
-        <h1 data-testid="ranking-title">Ranking</h1>
-        <button
-          onClick={ this.handleClick }
-          type="button"
-          data-testid="btn-go-home"
-        >
-          Jogue Novamente
-        </button>
-        <section>
-          {
+      <div id="allPage">
+        <Header />
+        <section id="feedback">
+          <h1 data-testid="ranking-title">Ranking</h1>
+          {playersInfo ? (
             playersInfo.map((player, index) => (
               <Players
                 key={ index }
@@ -31,8 +25,14 @@ class Ranking extends Component {
                 name={ player.name }
                 score={ player.score }
               />
-            ))
-          }
+          ))): <Players score="0" name="Seja o primeiro"/>}
+          <button
+            onClick={ this.handleClick }
+            type="button"
+            data-testid="btn-go-home"
+          >
+            Jogue Novamente
+          </button>
         </section>
       </div>
     );

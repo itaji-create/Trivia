@@ -22,11 +22,10 @@ class Feedback extends React.Component {
   }
 
   handleClick = ({ target }) => {
-    const { history } = this.props;
     if (target.name === 'play') {
-      history.push('/');
+      window.location.pathname = '/';
     } else {
-      history.push('/ranking');
+      window.location.pathname = '/ranking';
     }
   }
 
@@ -34,7 +33,7 @@ class Feedback extends React.Component {
     const { assertions, score } = this.props;
     const MIN = 3;
     return (
-      <div>
+      <div id="allPage">
         <Header />
         <div id="feedback">
           <h2 data-testid="feedback-text">Feedback</h2>

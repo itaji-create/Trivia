@@ -60,8 +60,7 @@ class Game extends React.Component {
         seconds,
       );
     } else {
-      const { history } = this.props;
-      history.push('/feedback');
+      window.location.pathname = '/feedback';
     }
   }
 
