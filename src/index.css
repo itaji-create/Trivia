@@ -83,29 +83,17 @@ header #userIMG, table img {
   padding-right: 10px;
 }
 
-#ranking {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 2px 4px rgb(27, 27, 151);
-  width: 500px;
-  text-align: center;
-  margin-top: 50px;
-  margin-left: 30%;
-}
-
-#ranking button, #feedback button, #next-btn {
-  margin-bottom: 30px;
+.feedback button, #next-btn {
   background-color: whitesmoke;
   padding: 5px 24px;
   border-radius: 4px;
   border: 2px solid rgb(27, 27, 151);
   transition-duration: 0.4s;
   width: 200px;
-  margin-left: 30%;
+  align-self: center;
 }
 
-#ranking button:hover, #feedback button:hover, #next-btn:hover {
+.feedback button:hover, #next-btn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -118,26 +106,21 @@ header #userIMG, table img {
   padding: 10px;
 }
 
-#feedback {
+.feedback {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  min-width: 350px;
   align-self: center;
   border: solid rgb(27, 27, 151);
   padding: 10px;
   margin-top: 10px;
 }
 
-#feedback h2, #feedback h4 {
+.feedback h2, .feedback h4 {
   text-align: center;
 }
 
-#feedback button {
-  margin-left: 15%;
-  margin-bottom: 5px;
-}
-
-#feedback table {
+.feedback table {
   margin-bottom: 20px;
 }
 

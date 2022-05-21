@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import Players from '../components/Players';
-import Header from '../components/Header';
 
 class Ranking extends Component {
   handleClick = () => {
@@ -13,16 +11,15 @@ class Ranking extends Component {
 
     return (
       <div id="allPage">
-        <Header />
-        <section id="feedback">
-          <h1 data-testid="ranking-title">Ranking</h1>
+        <section className="feedback">
+          <h2 data-testid="ranking-title">Ranking</h2>
           {playersInfo ? (
             playersInfo.map((player, index) => (
               <Players
                 key={ index }
-                src={ player.picture }
+                email={ player.email }
                 index={ index }
-                name={ player.name }
+                name={ player.userName }
                 score={ player.score }
               />
           ))): <Players score="0" name="Seja o primeiro"/>}
@@ -31,7 +28,7 @@ class Ranking extends Component {
             type="button"
             data-testid="btn-go-home"
           >
-            Jogue Novamente
+            Play Again
           </button>
         </section>
       </div>
@@ -39,9 +36,4 @@ class Ranking extends Component {
   }
 }
 
-Ranking.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
-};
 export default Ranking;

@@ -7,6 +7,7 @@ import NextButton from '../components/NextButton';
 import { fetchQuestions, addPoint } from '../redux/actions';
 import changeColor from '../services/changeColor';
 import getRandomInt from '../services/getRandomInt';
+import addPlayerToRanking from '../helpers/addPlayerToRanking';
 
 class Game extends React.Component {
   constructor() {
@@ -50,6 +51,7 @@ class Game extends React.Component {
 
   handleClick = () => {
     const { index } = this.state;
+    const player = JSON.parse(localStorage.getItem('player'));
     const max = 4;
     const array = getRandomInt();
     if (index < max) {
@@ -60,6 +62,10 @@ class Game extends React.Component {
         seconds,
       );
     } else {
+      player.assertions = this.props.assertions;
+      player.score = this.props.score;
+      localStorage.setItem('player', JSON.stringify(player));
+      addPlayerToRanking(player);
       window.location.pathname = '/feedback';
     }
   }

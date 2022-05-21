@@ -2,7 +2,6 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import md5 from 'crypto-js/md5';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
 
 class Feedback extends React.Component {
   componentDidMount() {
@@ -30,12 +29,12 @@ class Feedback extends React.Component {
   }
 
   render() {
-    const { assertions, score } = this.props;
     const MIN = 3;
+    const player = JSON.parse(localStorage.getItem('player'));
+    const { assertions, score } = player;
     return (
       <div id="allPage">
-        <Header />
-        <div id="feedback">
+        <div className="feedback">
           <h2 data-testid="feedback-text">Feedback</h2>
           {assertions < MIN
             ? (
