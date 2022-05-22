@@ -8,9 +8,10 @@ body {
   background-size: cover;
 }
 
-#allPage {
+.allPage {
   display: flex;
   flex-direction: column;
+  align-items: stretch;
 }
 
 body button {
@@ -109,11 +110,11 @@ header #userIMG, table img {
 .feedback {
   display: flex;
   flex-direction: column;
-  min-width: 350px;
   align-self: center;
   border: solid rgb(27, 27, 151);
   padding: 10px;
   margin-top: 10px;
+
 }
 
 .feedback h2, .feedback h4 {

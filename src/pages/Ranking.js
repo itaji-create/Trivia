@@ -8,9 +8,13 @@ class Ranking extends Component {
 
   render() {
     const playersInfo = JSON.parse(localStorage.getItem('ranking'));
+    playersInfo.sort((a,b) => {
+      return b.score < a.score ? -1 : b.score > a.score ? 1 : 0;
+  });
+    console.log(playersInfo);
 
     return (
-      <div id="allPage">
+      <div className="allPage">
         <section className="feedback">
           <h2 data-testid="ranking-title">Ranking</h2>
           {playersInfo ? (

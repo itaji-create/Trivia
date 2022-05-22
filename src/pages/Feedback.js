@@ -33,7 +33,7 @@ class Feedback extends React.Component {
     const player = JSON.parse(localStorage.getItem('player'));
     const { assertions, score } = player;
     return (
-      <div id="allPage">
+      <div className="allPage">
         <div className="feedback">
           <h2 data-testid="feedback-text">Feedback</h2>
           {assertions < MIN
@@ -57,22 +57,25 @@ class Feedback extends React.Component {
               <td data-testid="feedback-total-score">{ score }</td>
             </tr>
           </table>
-          <button
-            type="button"
-            name="play"
-            onClick={ this.handleClick }
-            data-testid="btn-play-again"
-          >
-            Jogue Novamente
-          </button>
-          <button
-            type="button"
-            name="ranking"
-            onClick={ this.handleClick }
-            data-testid="btn-ranking"
-          >
-            Ranking
-          </button>
+          <div>
+            <button
+              type="button"
+              name="play"
+              onClick={ this.handleClick }
+              data-testid="btn-play-again"
+            >
+              Jogue Novamente
+            </button>
+            <button
+              type="button"
+              name="ranking"
+              onClick={ this.handleClick }
+              data-testid="btn-ranking"
+            >
+              Ranking
+            </button>
+
+          </div>
         </div>
       </div>
     );
