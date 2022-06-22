@@ -1,4 +1,4 @@
-# Welcome to Recipes App
+# Welcome to Game Trivia
 
 ## Visit my website: 
 
