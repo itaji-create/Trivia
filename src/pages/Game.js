@@ -7,6 +7,7 @@ import NextButton from '../components/NextButton';
 import { fetchQuestions, addPoint } from '../redux/actions';
 import changeColor from '../services/changeColor';
 import getRandomInt from '../services/getRandomInt';
+const he = require('he');
 
 class Game extends React.Component {
   constructor() {
@@ -117,7 +118,7 @@ class Game extends React.Component {
         {getQuestions.length > 1 && (
           <Question
             key={ getQuestions[index].question }
-            question={ getQuestions[index].question }
+            question={ he.decode(getQuestions[index].question) }
             category={ getQuestions[index].category }
             correctAnswer={ getQuestions[index].correct_answer }
             wrongs={ getQuestions[index].incorrect_answers }
